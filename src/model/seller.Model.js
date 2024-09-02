@@ -7,21 +7,17 @@ const sellerSchema = new mongoose.Schema(
       trim: true,
       maxLength: 50,
     },
-    fullname: {
+    fullName: {
       type: String,
       maxLength: 30,
     },
     storeAddress: [
       {
-        buildingno: { type: String },
+        buildingNo: { type: String },
         city: { type: String },
         state: { type: String },
         postal: { type: Number },
         landmark: { type: String },
-        gst: { type: String },
-        businesscategory: { type: String },
-        documenttype: { type: String },
-        documentfile: { type: String },
         coordinates: {
           latitude: { type: Number },
           longitude: { type: Number },
@@ -38,20 +34,8 @@ const sellerSchema = new mongoose.Schema(
       trim: true,
       unique: true,
     },
-    isStoreVerified: { type: Boolean, default: false },
-    deliverypartners: [
-      {
-        time: { type: String, default: Date.now().toString() },
-        id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-      },
-    ],
-    useDefaultProsite: { type: Boolean, default: false },
-    membershipHistory: [
-      {
-        id: { type: mongoose.Schema.Types.ObjectId, ref: "Membership" },
-        date: { type: Date, default: Date.now },
-      },
-    ],
+    isSellerVerified: { type: Boolean, default: false },
+    // useDefaultProsite: { type: Boolean, default: false },
   },
   { timestamps: false }
 );

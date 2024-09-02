@@ -31,7 +31,10 @@ const DeliveriesSchema = new mongoose.Schema(
     deliveryLocation: {
       latitude: { type: Number },
       longitude: { type: Number },
-
+      altitude: { type: Number },
+      provider: { type: String },
+      accuracy: { type: Number },
+      bearing: { type: Number },
     }, // Geo-location details of the delivery
   },
   { timestamps: true }

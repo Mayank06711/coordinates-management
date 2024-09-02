@@ -7,7 +7,7 @@ const OrderSchema = new mongoose.Schema(
     delivered: { type: Boolean, default: false },
     quantity: { type: Number, min: 1 },
     total: { type: Number, min: 0 },
-    customername: { type: String },
+    customerName: { type: String , required: true },
     orderDetails: [
       {
         product: { type: ObjectId, ref: "Product" },
@@ -32,7 +32,7 @@ const OrderSchema = new mongoose.Schema(
       ],
       default: "pending",
     },
-    deliverycharges: { type: Number, min: 0 },
+    deliveryCharges: { type: Number, min: 0 },
     taxes: { type: Number, min: 0 },
     paymentMode: {
       type: String,
@@ -46,18 +46,18 @@ const OrderSchema = new mongoose.Schema(
       C: { type: String },
       D: { type: String },
     },//confusion on whic cities it will take
-    discountamount: { type: Number, min: 0 },
-    finalprice: { type: Number, min: 0 },
+    discountAmount: { type: Number, min: 0 },
+    finalPrice: { type: Number, min: 0 },
     paymentId: { type: String },
     topicId: { type: String },
     timing: { type: String },
     hub: { type: ObjectId, ref: "Hub" }, // Reference to the hub processing the order
-    finisheddeliveries: [{ type: ObjectId, ref: "Delivery" }],
-    orderno: { type: Number, default: 0 },
+    finishedDeliveries: [{ type: ObjectId, ref: "Delivery" }],
+    orderNo: { type: Number, default: 0 },
   },
   { timestamps: true }
 );
 
-const Order = mongoose.model('Order',OrderSchema);
+const Order = mongoose.model('Order', OrderSchema);
 
 export default Order;

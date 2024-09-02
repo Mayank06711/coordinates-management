@@ -3,10 +3,10 @@ const { ObjectId } = mongoose.Schema;
 
 const driverSchema = new mongoose.Schema(
   {
-    fullname: { type: String, maxLength: 50, required: true },
+    fullName: { type: String, maxLength: 50, required: true },
     password: { type: String, required: true },
     phoneNumber: { type: String, required: true },
-    isActive: { type: Boolean, default: true },
+    isActive: { type: Boolean, default: false },
     avatar: {
       publicId: { type: String, required: true },
       url: { type: String, required: true },
@@ -29,11 +29,11 @@ const driverSchema = new mongoose.Schema(
 
     // Driver's address details
     address: {
-      streetaddress: { type: String },
+      streetAddress: { type: String },
       state: { type: String },
       city: { type: String },
       landmark: { type: String },
-      pincode: { type: Number },
+      pinCode: { type: Number },
       country: { type: String },
     },
 
@@ -47,10 +47,10 @@ const driverSchema = new mongoose.Schema(
       adhar: {
         adharNumber: { type: String },
         address: {
-          streetaddress: { type: String },
+          streetAddress: { type: String },
           state: { type: String },
           city: { type: String },
-          pincode: { type: Number },
+          pinCode: { type: Number },
           country: { type: String },
         },
       },

@@ -47,12 +47,6 @@ const customerSchema = new mongoose.Schema(
       trim: true,
       unique: true,
     },
-    membershipHistory: [
-      {
-        id: { type: mongoose.Schema.Types.ObjectId, ref: "Membership" },
-        date: { type: Date, default: Date.now },
-      },
-    ],
   },
   { timestamps: false }
 );
