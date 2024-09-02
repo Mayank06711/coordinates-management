@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import winstonLogger from "../config/winston.config";
 const connectDb = async (URL) => {
   try {
-    const connectionInst = await mongoose.connect(URL, {
+    const connectionInst = await mongoose.connect(URL/process.env.DB_NAME, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
