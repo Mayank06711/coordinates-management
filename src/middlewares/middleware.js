@@ -5,6 +5,7 @@ import winstonLogger from "../config/winston.config.js";
 const upload = multer({ storage:multerStorageConfig }).single('file');
 
 
+
 const errorHandler = async (err, req, res, next) => {
     // Default to a 500 Internal Server Error if no status is set
     const statusCode = err.status || 500;

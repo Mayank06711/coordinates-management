@@ -10,6 +10,7 @@ const __dirname = path.dirname(__filename);
 // Ensure that the uploads directory exists
 const uploadDir = path.join(__dirname, "../public/uploads");
 
+ // Create the uploads directory if it doesn't exist yet
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
@@ -23,3 +24,5 @@ export const multerStorageConfig = multer.diskStorage({
     cb(null, safeFilename);
   },
 });
+
+
