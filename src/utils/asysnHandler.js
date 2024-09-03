@@ -6,8 +6,7 @@ const asyncHandler = (fn) => {
       await fn(req, res, next);
     } catch (error) {
       winstonLogger.error(error.message, { error });
-      const statusCode = error.statusCode || 500;
-      return res.status(statusCode).send({ message: error.message || 'Internal Server Error' });
+      next(error);
     }
   };
 };

@@ -1,11 +1,8 @@
 import mongoose from "mongoose";
-import winstonLogger from "../config/winston.config";
-const connectDb = async (URL) => {
+import winstonLogger from "../config/winston.config.js";
+const connectDb = async (URI) => {
   try {
-    const connectionInst = await mongoose.connect(URL/process.env.DB_NAME, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const connectionInst = await mongoose.connect(`${URI}/${process.env.DB_NAME}`);
     winstonLogger.info(
       `Connected to MongoDB at ${connectionInst.connection.host}:${connectionInst.connection.port}`
     );
