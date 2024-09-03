@@ -5,7 +5,6 @@ import winstonLogger from "../config/winston.config.js";
 const upload = multer({ storage:multerStorageConfig }).single('file');
 
 
-
 const errorHandler = async (err, req, res, next) => {
     // Default to a 500 Internal Server Error if no status is set
     const statusCode = err.status || 500;
@@ -19,6 +18,11 @@ const errorHandler = async (err, req, res, next) => {
     return res.status(statusCode).json({ message, status: statusCode });
 }
 
+
+const validateCoordinates = (req, res, next) => {
+    // Validate the coordinates in the request body
+    const { latitude, longitude } = req.body;
+}
 
 const isMonitoring = (req, res, next) => {
     // Check if the request is coming from a monitoring service
