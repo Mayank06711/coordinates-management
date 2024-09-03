@@ -29,7 +29,9 @@ app.use(cookieParser())
 app.use(limitIncomingRequests)
 
 // import routes
+import customerRoutes from "./routes/customer.routes.js"
 import { errorHandler } from "./middlewares/middleware.js";
+app.use("/api/v1/", customerRoutes)
 app.use(errorHandler)
 
 
