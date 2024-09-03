@@ -1,0 +1,10 @@
+PORT=your port
+MONGODB_URI= your MONGODB URI
+DB_NAME= your database name
+CLOUDINARY_CLOUD_NAME= your CLOUDINARY
+CLOUDINARY_API_KEY= your CLOUDINARY API key
+CLOUDINARY_API_SECRET= your CLOU DATABASE API secret
+REDIS_HOST= your REDIS host name 
+REDIS_PORT= your REDis port
+KAKFA=
+NODE_ENV= your node environment
