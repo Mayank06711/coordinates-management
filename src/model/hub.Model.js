@@ -27,7 +27,9 @@ const HubSchema = new mongoose.Schema(
       street: { type: String, required:true },
       pinCode: { type: String, required:true , maxlength:6},
     },
-    capacity: { type: Number }, // The capacity of the hub in terms of number of orders it can handle
+    capacity: { type: Number },
+    orders: [{ type: ObjectId, ref: "Order" }], // The capacity of the hub in terms of number of orders it can handle
+    status : {type: String, default:"pending"}
   },
   { timestamps: true }
 );
