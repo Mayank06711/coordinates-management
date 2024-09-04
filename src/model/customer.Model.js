@@ -1,5 +1,4 @@
 import mongoose, {Schema} from "mongoose";
-import mongoose from "mongoose";
 
 const customerSchema = new mongoose.Schema(
   {
@@ -7,16 +6,20 @@ const customerSchema = new mongoose.Schema(
       type: String,
       trim: true,
       maxLength: 50,
+      required: true,
+      unique: true,
     },
     gender: {
       type: String,
+      required: true,
     },
-    fullname: {
+    fullName: {
       type: String,
       maxLength: 30,
+      required: true,
     },
-    purchase_history: [{ type: mongoose.Schema.Types.ObjectId, ref: "Order" }],
-    purchase_products: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
+    purchaseHistory: [{ type: mongoose.Schema.Types.ObjectId, ref: "Order" }],
+    purchaseProducts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
     orders: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -26,12 +29,12 @@ const customerSchema = new mongoose.Schema(
       },
     ],
     address: {
-      streetaddress: { type: String },
-      state: { type: String },
-      city: { type: String },
+      streetAddress: { type: String },
+      state: { type: String , required: true},
+      city: { type: String, required: true},
       landmark: { type: String },
-      pincode: { type: Number },
-      country: { type: String },
+      pinCode: { type: Number, required: true},
+      country: { type: String, required: true},
       coordinates: {
         latitude: { type: Number },
         longitude: { type: Number },
@@ -46,6 +49,7 @@ const customerSchema = new mongoose.Schema(
       maxLength: 30,
       trim: true,
       unique: true,
+      required:true,
     },
   },
   { timestamps: false }

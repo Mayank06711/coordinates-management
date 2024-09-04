@@ -1,4 +1,4 @@
-import winstonLogger from "../config/winston.config";
+import winstonLogger from "../config/winston.config.js";
 
 const asyncHandler = (fn) => {
   return async (req, res, next) => {
