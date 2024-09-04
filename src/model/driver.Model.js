@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const { ObjectId } = mongoose.Schema;
-
+import bcrypt from "bcrypt";
 const driverSchema = new mongoose.Schema(
   {
     fullName: { type: String, maxLength: 50, required: true },
@@ -73,6 +73,19 @@ const driverSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+// Pre-save hook to hash the password before saving
+driverSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
+  this.password = await bcrypt.hash(this.password, 10);
+  next();
+});
+
+// Instance method to check if the password is correct
+driverSchema.methods.isPasswordCorrect = async function (password) {
+  // methods is is used to add any property  in the schema
+  return await bcrypt.compare(password, this.password);
+};
 
 const Driver = mongoose.model("Driver", driverSchema);
 
