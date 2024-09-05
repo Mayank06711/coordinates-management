@@ -13,15 +13,15 @@ const HubSchema = new mongoose.Schema(
             url: {type:String,required:true}
         }
      }, // The admin or manager of the hub
-    location: {
-      city: { type: String, required:true },
-      state: { type: String, required:true },
-      country: { type: String, required:true },
+     location: {
+      city: { type: String, required: true },
+      state: { type: String, required: true },
+      country: { type: String, required: true },
       coordinates: {
-        latitude: { type: Number },
-        longitude: { type: Number },
-        altitude: { type: Number },
+        type: [Number], // [longitude, latitude]
+        index: "2dsphere", // Enable 2dsphere index for geospatial queries
       },
+    
     },
     address: {
       street: { type: String, required:true },
