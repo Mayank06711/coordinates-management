@@ -1,38 +1,23 @@
-2024-09-04T20:32:12.309Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
-2024-09-04T20:32:42.533Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:32:47.283Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
-2024-09-04T20:33:03.898Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:34:01.650Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
-2024-09-04T20:34:19.604Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
-2024-09-04T20:34:24.321Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
-2024-09-04T20:34:55.877Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
-2024-09-04T20:35:28.234Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:35:30.738Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:35:32.477Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
-2024-09-04T20:35:34.222Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:35:36.488Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:35:38.102Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:35:44.210Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:35:48.623Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
-2024-09-04T20:35:50.123Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:35:51.795Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:36:03.133Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:36:41.839Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
-2024-09-04T20:36:45.847Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:37:33.489Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
-2024-09-04T20:38:12.163Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
-2024-09-04T20:38:50.782Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
-2024-09-04T20:39:35.798Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:40:01.387Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:40:06.286Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
-2024-09-04T20:40:19.696Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
-2024-09-04T20:42:16.602Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
-2024-09-04T20:43:13.768Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
-2024-09-04T20:43:38.478Z [ERROR]: All fields are required
-2024-09-04T20:43:38.485Z [ERROR]: This error occured on undefined 
- message:All fields are required 
- code:500
-2024-09-04T20:44:15.811Z [ERROR]: All fields are required
-2024-09-04T20:44:15.813Z [ERROR]: This error occured on undefined 
- message:All fields are required 
- code:500
+2024-09-04T22:35:33.167Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-04T22:35:51.938Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-04T22:36:32.060Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-04T22:44:02.560Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-04T22:44:22.505Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-04T22:44:27.012Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-04T22:44:39.594Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-04T22:44:50.832Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-04T22:44:53.263Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-04T22:51:34.036Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-04T22:56:28.391Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-04T23:56:51.121Z [INFO]: Connected to Redis
+2024-09-04T23:56:51.618Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-04T23:57:47.028Z [INFO]: Connected to Redis
+2024-09-04T23:57:47.599Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-04T23:58:15.839Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-04T23:58:15.848Z [INFO]: Connected to Redis
+2024-09-04T23:58:51.652Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-04T23:58:51.674Z [INFO]: Connected to Redis
+2024-09-04T23:58:55.557Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-04T23:58:55.569Z [INFO]: Connected to Redis
+2024-09-04T23:59:23.001Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-04T23:59:23.015Z [INFO]: Connected to Redis
