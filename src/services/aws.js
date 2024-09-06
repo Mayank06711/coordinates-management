@@ -9,20 +9,17 @@ import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import apiError from "../utils/apiError.js";
 import fs from "fs";
 
-// Upload a Largefiles  to AWS S3 bucket
+// Upload a Largefiles  to AWS S3 bucket i will make it multipart upload
 const putLargeFilesTos3 = async (
   bucket,
   fileName,
   contentType,
-  filePath,
   expiresIn
 ) => {
-  const fileStream = fs.createReadStream(filePath); // here i creating a stream for the file
-
   const command = new PutObjectCommand({
     Bucket: bucket,
     Key: fileName,
-    Body: fileStream, // Stream data (used for large files/ like uploading all cutomer data file at once)
+    //Body: fileStream, // Stream data (used for large files/ like uploading all cutomer data file at once)
     ContentType: contentType,
   });
 
@@ -30,7 +27,7 @@ const putLargeFilesTos3 = async (
     const preSignedUrlForPuttingObject = await getSignedUrl(s3Client, command, {
       expiresIn: expiresIn,
     });
-    console.log("preSignedUrlForPuttingObject", preSignedUrlForPuttingObject);
+    console.log("preSignedUrlForPuttingObject generated and returned successsfully from putLarge file on S3" );
     return preSignedUrlForPuttingObject;
   } catch (error) {
     console.error(error);
@@ -44,26 +41,23 @@ const putImagesOrPDFTos3 = async (
   bucket,
   fileName,
   contentType,
-  filePath,
   expiresIn
 ) => {
-  // const fileContent = fs.readFileSync(filePath); // Read file as Buffer
-
   const command = new PutObjectCommand({
     Bucket: bucket,
     Key: fileName,
    // Body: fileContent, // Buffer data
     ContentType: contentType,
   });
-
+  console.log("ExpiresIn: ", expiresIn);
   try {
     const preSignedUrlForPuttingObject = await getSignedUrl(s3Client, command, {
       expiresIn: expiresIn,
     });
-    console.log("preSignedUrlForPuttingObject", preSignedUrlForPuttingObject);
+    console.log("\n \n preSignedUrlForPuttingObject Has been generated Succcessfully from PutImageOrPdfOnS3 \n \n \n");
     return preSignedUrlForPuttingObject;
   } catch (error) {
-    console.error(error);
+    console.error(error, "\n \n Error generating preSignedUrlForPuttingObject \n \n");
     throw new apiError(500, error?.message, error);
   }
 };
@@ -80,7 +74,7 @@ const getObjectFromS3 = async (bucketName, objectKey, expiresIn) => {
       getObjectCommand,
       { expiresIn: expiresIn }
     );
-    console.log(preSignedUrlForGettingObject, "preSignedUrlForGettingObject");
+    console.log(preSignedUrlForGettingObject," \n \n preSignedUrlForGettingObject has been genertaed succesfully from getObjectFromS3 \n \n ");
     return preSignedUrlForGettingObject;
   } catch (error) {
     console.error(error);
