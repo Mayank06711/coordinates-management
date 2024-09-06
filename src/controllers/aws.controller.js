@@ -13,8 +13,25 @@ import path from "path";
 import { fileURLToPath } from "url";
 import s3Client from "../config/aws.config.js";
 import { HeadObjectCommand } from "@aws-sdk/client-s3";
+import retryOperation from "../helper/retryMech.js";
 
-let keyGet;
+
+// S3 upload logic into a separate function to use it in retry operation
+const uploadFileToS3 = async (uplURL, file) => {
+  const fileBufferOrReadStream = file.size > 5 * 1024 * 1024 // 5 MB
+    ? fs.createReadStream(file.path)
+    : await fs.promises.readFile(file.path);
+
+  return fetch(uplURL, {
+    method: "PUT",
+    headers: {
+      "Content-Type": file.mimetype,
+      "Content-Length": file.size,
+    },
+    body: fileBufferOrReadStream,
+  });
+};
+
 
 // POST /api/v1/aws/upload
 const uploadOnS3 = asyncHandler(async (req, res) => {
@@ -23,79 +40,43 @@ const uploadOnS3 = asyncHandler(async (req, res) => {
     throw new apiError(400, "File not found, Please upload the required file.");
   }
 
-  const fileSizeInBytes = file.size; // in bytes
-  const fileSizeInMB = fileSizeInBytes / (1024 * 1024); // in MB
-  let uplURL; // for
+  const fileSizeInMB = file.size / (1024 * 1024); // in MB
+  let uplURL; // URL for the pre-signed upload
 
-  keyGet = file.filename;
-  console.log(keyGet, "filename");
-  let s3Response;
   try {
     if (fileSizeInMB > 5) {
       if (req.user.role !== "admin") {
-        throw new apiError(
-          403,
-          "Forbidden: Only admins can upload files greater than 5 MB"
-        );
+        throw new apiError(403, "Forbidden: Only admins can upload files greater than 5 MB");
       }
-      uplURL = await putLargeFilesTos3(
-        process.env.AWS_BUCKET,
-        file.filename, //  it is the objevct key save it some where to access object later
-        file.mimetype,
-        60
-      );
-      s3Response = await fetch(uplURL, {
-        method: "PUT",
-        headers: {
-          "Content-Type": file.mimetype,
-          "Content-Length": file.size,
-        },
-        body: fs.createReadStream(file.path),
-      });
+      uplURL = await putLargeFilesTos3(process.env.AWS_BUCKET, file.filename, file.mimetype, 60);
     } else {
-      uplURL = await putImagesOrPDFTos3(
-        process.env.AWS_BUCKET,
-        file.filename,
-        file.mimetype,
-        3600
-      );
-      // read the file into a Buffer for smaller files
-      const fileBuffer = await fs.promises.readFile(file.path);
-      s3Response = await fetch(uplURL, {
-        method: "PUT",
-        headers: {
-          "Content-Type": file.mimetype,
-          "Content-Length": file.size,
-        },
-        body: fileBuffer,
-      });
+      uplURL = await putImagesOrPDFTos3(process.env.AWS_BUCKET, file.filename, file.mimetype, 3600);
     }
+
+    // Use retryOperation to handle retries for the upload operation
+    const s3Response = await retryOperation(() => uploadFileToS3(uplURL, file),3);
+
     if (!s3Response.ok) {
-      //const errorText = await response.text();
-      console.log(
-        `\n\nStatus: ${s3Response.status} ${s3Response.statusText} \n ok : ${s3Response.ok}`
-      );
+      console.log(`\n\nStatus: ${s3Response.status} ${s3Response.statusText} \n ok : ${s3Response.ok}`);
       console.log(`\n\nHeaders: ${JSON.stringify(s3Response.headers)}`);
       console.log(`\n\nBody: ${await s3Response.text()}`);
-      console.log("\n 2 \n");
-      throw new apiError(
-        s3Response.status,
-        `Failed to upload file: ${s3Response.statusText}`
-      );
+      throw new apiError(s3Response.status, `Failed to upload file: ${s3Response.statusText}`);
     }
-    fs.unlinkSync(file.path); // deleting local file after successful upload
+
+    fs.unlinkSync(file.path); // Delete local file after successful upload
     res.status(s3Response.status).json({
       message: "File uploaded successfully",
       status: s3Response.status,
       statusText: s3Response.statusText,
+      objectKey:file.filename,
       // data: s3Response.body, as On uploading something with PUT method on S3 using preSigned url AWS does not respond with any data only it gives status 200 and text ok so response.body will be empty
     });
   } catch (error) {
-    fs.unlinkSync(file.path); // deleting local even if upload fails
-    // Throwing Error: This keeps your code DRY (Don't Repeat Yourself) so next time when  arein diubt which us better thrwoing errro or sending response always choose throwing errr and let Centralised middleware do their work of errror handiling
+    fs.unlinkSync(file.path); // Delete local file even if upload fails
     throw new apiError(500, "File upload failed", null, error.message);
   }
 });
+
 
 // GET /api/v1/aws/object/:keyName
 const getObjectS3 = asyncHandler(async (req, res) => {
@@ -169,8 +150,17 @@ const getObjectS3 = asyncHandler(async (req, res) => {
   }
 });
 
+
 // GET /api/v1/aws/objects/list
-const getListObjectS3 = asyncHandler(async (req, res) => {});
+const getListObjectS3 = asyncHandler(async (req, res) => {
+    const {objectKey, pages} = req.body;
+    if (typeof objectKey !== "string") {
+        throw new apiError(400, `Objectkey is should be a string, found objectKey is of type: ${typeof objectKey}`);
+    }
+    const data = await listObjectsFromS3(process.env.AWS_BUCKET,objectKey,pages);
+    res.status(200).json(data);
+});
+
 
 // DELETE /api/v1/aws/object/del
 // const delObjectS3 = asyncHandler(async (req, res) => {
@@ -206,7 +196,10 @@ const getListObjectS3 = asyncHandler(async (req, res) => {});
 //   }
 // });
 
+
 // DELETE /api/v1/aws/object/del
+
+
 const delObjectS3 = asyncHandler(async (req, res) => {
   const { keyName } = req.body; // Expecting keyName as an array in the request body
 

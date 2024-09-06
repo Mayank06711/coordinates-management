@@ -1,0 +1,182 @@
+2024-09-06T16:57:09.860Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T16:57:48.483Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T16:57:55.534Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T16:57:58.540Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T16:58:00.788Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T16:58:03.101Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T16:58:17.962Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T16:58:26.670Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T16:58:40.381Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T16:59:00.612Z [ERROR]: Internal Server Error - Failed to get object: Forbidden
+2024-09-06T16:59:00.622Z [ERROR]: This error occured on undefined 
+ message:Internal Server Error - Failed to get object: Forbidden 
+ code:500
+2024-09-06T16:59:34.972Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T16:59:39.094Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T16:59:53.334Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:00:13.400Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:00:22.827Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:00:27.403Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:00:31.184Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:00:47.822Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:00:51.642Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:00:59.489Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:01:43.015Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:01:49.301Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:03:52.384Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:03:55.227Z [ERROR]: This error occured on undefined 
+ message:Unexpected field 
+ code:500
+2024-09-06T17:04:43.572Z [ERROR]: Error checking object 2024-09-06T14-11-17.120Z-product_data_tabular.csv: UnknownError, Code: Unknown, RequestId: N/A
+2024-09-06T17:04:43.579Z [ERROR]: This error occured on undefined 
+ message:Error checking object 2024-09-06T14-11-17.120Z-product_data_tabular.csv: UnknownError, Code: Unknown, RequestId: N/A 
+ code:500
+2024-09-06T17:06:30.152Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:06:34.606Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:06:43.008Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:06:54.362Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:06:58.868Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:07:02.920Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:07:11.843Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:07:18.721Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:07:34.887Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:07:43.142Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:07:50.211Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:07:54.360Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:08:02.378Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:08:05.330Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:08:30.224Z [ERROR]: Internal Server Error - Failed to get object: Forbidden
+2024-09-06T17:08:30.235Z [ERROR]: This error occured on undefined 
+ message:Internal Server Error - Failed to get object: Forbidden 
+ code:500
+2024-09-06T17:09:24.520Z [ERROR]: Internal Server Error - Failed to get object: Forbidden
+2024-09-06T17:09:24.525Z [ERROR]: This error occured on undefined 
+ message:Internal Server Error - Failed to get object: Forbidden 
+ code:500
+2024-09-06T17:09:44.536Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:09:46.340Z [ERROR]: Internal Server Error - Failed to get object: Forbidden
+2024-09-06T17:09:46.342Z [ERROR]: This error occured on undefined 
+ message:Internal Server Error - Failed to get object: Forbidden 
+ code:500
+2024-09-06T17:11:09.973Z [ERROR]: Internal Server Error - Failed to get object: Forbidden
+2024-09-06T17:11:09.980Z [ERROR]: This error occured on undefined 
+ message:Internal Server Error - Failed to get object: Forbidden 
+ code:500
+2024-09-06T17:11:25.717Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:11:34.484Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:11:44.119Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:11:44.591Z [ERROR]: Internal Server Error - Failed to get object: Forbidden
+2024-09-06T17:11:44.597Z [ERROR]: This error occured on undefined 
+ message:Internal Server Error - Failed to get object: Forbidden 
+ code:500
+2024-09-06T17:12:32.414Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:12:38.672Z [ERROR]: Internal Server Error - Failed to get object: Forbidden
+2024-09-06T17:12:38.678Z [ERROR]: This error occured on undefined 
+ message:Internal Server Error - Failed to get object: Forbidden 
+ code:500
+2024-09-06T17:13:34.948Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:13:50.821Z [ERROR]: Internal Server Error - Failed to get object: Forbidden
+2024-09-06T17:13:50.828Z [ERROR]: This error occured on undefined 
+ message:Internal Server Error - Failed to get object: Forbidden 
+ code:500
+2024-09-06T17:14:32.714Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:14:43.095Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:14:48.782Z [ERROR]: Object key is required and should be a non-empty string
+2024-09-06T17:14:48.791Z [ERROR]: This error occured on undefined 
+ message:Object key is required and should be a non-empty string 
+ code:500
+2024-09-06T17:15:01.275Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:16:08.025Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:16:08.346Z [ERROR]: Cannot read properties of undefined (reading 'length')
+2024-09-06T17:16:08.355Z [ERROR]: This error occured on undefined 
+ message:Cannot read properties of undefined (reading 'length') 
+ code:500
+2024-09-06T17:16:50.436Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:17:21.094Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:17:24.773Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:17:28.375Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:17:31.270Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:17:35.226Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:17:40.492Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:17:55.244Z [ERROR]: Error listing objects
+2024-09-06T17:17:55.251Z [ERROR]: This error occured on undefined 
+ message:Error listing objects 
+ code:500
+2024-09-06T17:19:34.056Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:20:07.190Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:20:14.040Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:20:17.318Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:20:18.302Z [ERROR]: Object key is required and should be a non-empty string
+2024-09-06T17:20:18.318Z [ERROR]: This error occured on undefined 
+ message:Object key is required and should be a non-empty string 
+ code:500
+2024-09-06T17:20:32.071Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:20:36.858Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:20:40.393Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:20:52.705Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:20:57.219Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:20:58.207Z [ERROR]: Object key is should be a string
+2024-09-06T17:20:58.219Z [ERROR]: This error occured on undefined 
+ message:Object key is should be a string 
+ code:500
+2024-09-06T17:21:17.570Z [ERROR]: Object key is should be a string
+2024-09-06T17:21:17.577Z [ERROR]: This error occured on undefined 
+ message:Object key is should be a string 
+ code:500
+2024-09-06T17:21:35.146Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:21:37.747Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:21:38.415Z [ERROR]: Object key is should be a string
+2024-09-06T17:21:38.428Z [ERROR]: This error occured on undefined 
+ message:Object key is should be a string 
+ code:500
+2024-09-06T17:22:00.902Z [ERROR]: Object key is should be a string
+2024-09-06T17:22:00.905Z [ERROR]: This error occured on undefined 
+ message:Object key is should be a string 
+ code:500
+2024-09-06T17:22:47.675Z [ERROR]: Error listing objects
+2024-09-06T17:22:47.677Z [ERROR]: This error occured on undefined 
+ message:Error listing objects 
+ code:500
+2024-09-06T17:23:22.107Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:23:32.094Z [ERROR]: Error listing objects
+2024-09-06T17:23:32.098Z [ERROR]: This error occured on undefined 
+ message:Error listing objects 
+ code:500
+2024-09-06T17:23:47.516Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:23:55.543Z [ERROR]: Error listing objects
+2024-09-06T17:23:55.547Z [ERROR]: This error occured on undefined 
+ message:Error listing objects 
+ code:500
+2024-09-06T17:23:59.619Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:24:05.684Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:24:24.109Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:24:28.181Z [ERROR]: Object key is should be a string number
+2024-09-06T17:24:28.187Z [ERROR]: This error occured on undefined 
+ message:Object key is should be a string number 
+ code:500
+2024-09-06T17:24:40.235Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:24:42.692Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:24:47.512Z [INFO]: Connected to MongoDB at cordinate-shard-00-00.lljlp.mongodb.net:27017
+2024-09-06T17:24:48.586Z [ERROR]: Object key is should be a string, found object key is of type: number
+2024-09-06T17:24:48.594Z [ERROR]: This error occured on undefined 
+ message:Object key is should be a string, found object key is of type: number 
+ code:500
+2024-09-06T17:24:56.090Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:25:01.238Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:25:07.346Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:25:10.744Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:25:16.142Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T17:25:21.382Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:25:24.514Z [ERROR]: Objectkey is should be a string, found objectKey is of type: number
+2024-09-06T17:25:24.521Z [ERROR]: This error occured on undefined 
+ message:Objectkey is should be a string, found objectKey is of type: number 
+ code:500
+2024-09-06T17:25:37.352Z [ERROR]: Error listing objects
+2024-09-06T17:25:37.357Z [ERROR]: This error occured on undefined 
+ message:Error listing objects 
+ code:500
+2024-09-06T17:26:00.439Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:26:19.788Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:26:27.014Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:26:41.716Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
+2024-09-06T17:26:46.478Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
