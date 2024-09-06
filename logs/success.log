@@ -180,3 +180,20 @@
 2024-09-06T17:26:27.014Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
 2024-09-06T17:26:41.716Z [INFO]: Connected to MongoDB at cordinate-shard-00-02.lljlp.mongodb.net:27017
 2024-09-06T17:26:46.478Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T18:39:01.089Z [INFO]: Connected to MongoDB at cordinate-shard-00-01.lljlp.mongodb.net:27017
+2024-09-06T18:39:18.743Z [ERROR]: Error listing objects
+2024-09-06T18:39:18.752Z [ERROR]: This error occured on undefined 
+ message:Error listing objects 
+ code:500
+2024-09-06T18:39:44.089Z [ERROR]: Error checking object 2024-09-06T14-11-17.120Z-product_data_tabular.csv: UnknownError, Code: Unknown, RequestId: N/A
+2024-09-06T18:39:44.096Z [ERROR]: This error occured on undefined 
+ message:Error checking object 2024-09-06T14-11-17.120Z-product_data_tabular.csv: UnknownError, Code: Unknown, RequestId: N/A 
+ code:500
+2024-09-06T19:06:06.613Z [ERROR]: Error checking object 2024-09-06T14-11-17.120Z-product_data_tabular.csv: UnknownError, Code: Unknown, RequestId: N/A
+2024-09-06T19:06:06.619Z [ERROR]: This error occured on undefined 
+ message:Error checking object 2024-09-06T14-11-17.120Z-product_data_tabular.csv: UnknownError, Code: Unknown, RequestId: N/A 
+ code:500
+2024-09-06T19:06:31.477Z [ERROR]: Error listing objects
+2024-09-06T19:06:31.482Z [ERROR]: This error occured on undefined 
+ message:Error listing objects 
+ code:500

@@ -19,6 +19,7 @@ export const createHub = async (req, res) => {
   }
 };
 
+
 export const approveHub = async (req, res) => {
   try {
     const { hubId } = req.params;
@@ -44,6 +45,7 @@ export const approveHub = async (req, res) => {
     throw new apiError(400, error.message);
   }
 };
+
 
 export const getHubsInRange = async (req, res) => {
   try {

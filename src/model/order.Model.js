@@ -58,6 +58,8 @@ const OrderSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+OrderSchema.index({customerName:1, orderDetails: 1, hub:1})
+
 const Order = mongoose.model('Order', OrderSchema);
 
 export default Order;
