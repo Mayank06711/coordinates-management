@@ -35,7 +35,6 @@ const sellerSchema = new mongoose.Schema(
       unique: true,
     },
     isSellerVerified: { type: Boolean, default: false },
-    // useDefaultProsite: { type: Boolean, default: false },
   },
   { timestamps: false }
 );

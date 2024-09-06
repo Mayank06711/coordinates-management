@@ -28,7 +28,7 @@ conncetDb(process.env.MONGODB_URI)
   app.listen(process.env.PORT||9991, ()=>{
   console.log(`Server is running on port: ${process.env.PORT}`)
   });
-  await connectRedis();
+  // await connectRedis();
 })
 .catch(
   (err)=>{console.log("Mongo DB connection failed !! " + err)}

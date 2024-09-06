@@ -1,7 +1,7 @@
 import mongoose, {Schema} from "mongoose";
 
 const customerSchema = new mongoose.Schema(
-  {
+  { 
     email: {
       type: String,
       trim: true,
