@@ -8,8 +8,6 @@ dotenv.config({
     path: "./.env",
 })
 
-
-
 conncetDb(process.env.MONGODB_URI)
 .then(async()=>{
   app.listen(process.env.PORT||9991, ()=>{
