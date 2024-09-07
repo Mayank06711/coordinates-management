@@ -180,9 +180,6 @@ const delObjectS3 = asyncHandler(async (req, res) => {
   const nonExistingKeys = [];
   for (const key of uniqueKeyNames) {
     try {
-      console.log(key, "upcoming")
-      console.log(typeof key, "Type of key"); // Ensure it logs as a string
-
       const command = new HeadObjectCommand({
         Bucket: process.env.AWS_BUCKET,
         Key: key,
@@ -190,7 +187,6 @@ const delObjectS3 = asyncHandler(async (req, res) => {
       const response = await s3Client.send(command);
       // If the object exists, add it to the list
       existingKeys.push(key);
-      console.log(existingKeys,"existing keys")
     } catch (error) {
       console.error("Error in HeadObjectCommand for key:", key, error);
       if (error.name === 'NotFound') {
@@ -212,9 +208,6 @@ const delObjectS3 = asyncHandler(async (req, res) => {
   if (existingKeys.length > 0) {
     try {
       const delRes = await deleteObjectsFromS3(process.env.AWS_BUCKET, existingKeys);
-
-      console.log(delRes, " \n\n AWS_DeletedObjectsFromS3");
-
       res.status(200).json({
         message: "Objects deletion completed",
         deletedKeys: delRes.Deleted.map(obj => obj.Key), // List of successfully deleted keys
