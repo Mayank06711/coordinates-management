@@ -9,8 +9,6 @@ import fetch from "node-fetch";
 import asyncHandler from "../utils/asysnHandler.js";
 import apiError from "../utils/apiError.js";
 import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
 import s3Client from "../config/aws.config.js";
 import { HeadObjectCommand } from "@aws-sdk/client-s3";
 import retryOperation from "../helper/retryMech.js";
