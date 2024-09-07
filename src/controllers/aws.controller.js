@@ -162,42 +162,6 @@ const getListObjectS3 = asyncHandler(async (req, res) => {
 });
 
 
-// DELETE /api/v1/aws/object/del
-// const delObjectS3 = asyncHandler(async (req, res) => {
-//   const { keyName } = req.body; // keyName as an array in the request bod
-//   if (!keyName || !Array.isArray(keyName) || keyName.length === 0) {
-//     throw new apiError(
-//       400,
-//       "An array of keyNames with minimum length 1 is required"
-//     );
-//   }
-//    // Create a new variable to store unique keys, since keyName is a constant
-//    const uniqueKeyNames = [...new Set(keyName)];
-//   try {
-//     const delRes = await deleteObjectsFromS3(process.env.AWS_BUCKET, uniqueKeyNames);
-//     console.log(delRes.Deleted, " \n \n AWS_DEletedObjectsFromS3");
-//     if (!delRes || !delRes.Deleted) {
-//       throw new apiError(
-//         delRes.$metadata.httpStatusCode,
-//         `Failed to delete objects: ${keyName.join(", ")}`
-//       );
-//     }
-//     res.status(200).json({
-//       message: "Objects deleted successfully",
-//       deletedKeys: delRes.Deleted.map((obj) => obj.Key),
-//       errors: delRes.Errors || [],
-//     });
-//   } catch (error) {
-//     console.error("Error deleting object:", error);
-//     throw new apiError(
-//       500,
-//       ` Something went wrong while deleting object: ${error.message}`
-//     );
-//   }
-// });
-
-
-// DELETE /api/v1/aws/object/del
 
 
 const delObjectS3 = asyncHandler(async (req, res) => {
@@ -216,19 +180,23 @@ const delObjectS3 = asyncHandler(async (req, res) => {
   const nonExistingKeys = [];
   for (const key of uniqueKeyNames) {
     try {
+      console.log(key, "upcoming")
+      console.log(typeof key, "Type of key"); // Ensure it logs as a string
+
       const command = new HeadObjectCommand({
         Bucket: process.env.AWS_BUCKET,
         Key: key,
       });
       const response = await s3Client.send(command);
-      console.log(`Object ${key} exists:`, response);
       // If the object exists, add it to the list
       existingKeys.push(key);
+      console.log(existingKeys,"existing keys")
     } catch (error) {
       console.error("Error in HeadObjectCommand for key:", key, error);
       if (error.name === 'NotFound') {
         // Object does not exist
         nonExistingKeys.push(key);
+        console.log(nonExistingKeys,"non existing");
       } else {
         console.error(`Error checking object ${key}: ${error.message}`);
         console.error(`Error details: Code - ${error.code}, RequestId - ${error.requestId}, HTTPStatusCode - ${error.$metadata?.httpStatusCode}`);
@@ -239,7 +207,7 @@ const delObjectS3 = asyncHandler(async (req, res) => {
         throw new apiError(500, errorMessage);
       }
   }
-
+  }
   // Step 2: Attempt to delete existing objects
   if (existingKeys.length > 0) {
     try {
@@ -254,6 +222,7 @@ const delObjectS3 = asyncHandler(async (req, res) => {
         errors: delRes.Errors || [], // Any errors (e.g., objects that didn't exist)
       });
     } catch (error) {
+      console.error("Something Error deleting object:", error);
       throw new apiError(500, `Something went wrong while deleting objects: ${error.message}`);
     }
   } else {
@@ -262,7 +231,9 @@ const delObjectS3 = asyncHandler(async (req, res) => {
       nonExistingKeys,
     });
   }
-}});
+});
+
+
 
 
 export { uploadOnS3, getObjectS3, delObjectS3, getListObjectS3 };
