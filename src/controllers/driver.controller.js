@@ -1,3 +1,4 @@
+import Hub from "../model/hub.Model.js";
 import Driver from "../models/Driver.js"; // Adjust the path as necessary
 import apiError from "../utils/apiError.js";
 
@@ -29,6 +30,10 @@ import apiError from "../utils/apiError.js";
     }
     const { driverId } = req.params;
 
+
+
+    const updatedHub = Hub.findByIdAndUpdate(req.hubId , {}) 
+
     // Find the driver by ID and update the isActive field to true (approved)
     const updatedDriver = await Driver.findByIdAndUpdate(
       driverId,
@@ -45,9 +50,10 @@ import apiError from "../utils/apiError.js";
       driver: updatedDriver,
     });
   } catch (error) {
-    res.status(500).json({ message: "Error approving driver", error: error.message });
-  }
+throw new Error(error.message) 
+     }
 };
+
 
 
 export { createDriver , approveDriver};

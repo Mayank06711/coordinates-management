@@ -28,6 +28,7 @@ const HubSchema = new mongoose.Schema(
       pinCode: { type: String, required:true , maxlength:6},
     },
     capacity: { type: Number },
+    drivers :[{type : ObjectId  , ref:"Driver"}],
     orders: [{ type: ObjectId, ref: "Order" }], // The capacity of the hub in terms of number of orders it can handle
     status : {type: String, default:"pending"}
   },
