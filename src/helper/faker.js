@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import Customer from '../model/customer.Model.js'; // Adjust the path according to your project structure
 
-export const createFakeCustomer = async () => {
+const createFakeCustomer = async () => {
   const fakeCustomerData = {
     email: faker.internet.email(),
     gender: faker.person.sex(),
@@ -32,4 +32,8 @@ export const createFakeCustomer = async () => {
     console.error('Error creating fake customer:', error);
   }
 };
+
+export {
+  createFakeCustomer,
+}
 
