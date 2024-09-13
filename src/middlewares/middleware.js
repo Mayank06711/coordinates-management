@@ -22,6 +22,7 @@ const errorHandler = async (err, req, res, next) => {
 const validateCoordinates = (req, res, next) => {
     // Validate the coordinates in the request body
     const { latitude, longitude } = req.body;
+    
 }
 
 const isMonitoring = (req, res, next) => {
