@@ -65,11 +65,10 @@ const driverSchema = new mongoose.Schema(
       cifNumber: { type: String },
     },
 
-    // Reference to the hub the driver is assigned to
+    
     hub: { type: ObjectId, ref: "Hub", required: true },
     paymemt:[{type : Schema.Types.Mixed  }],
 
-    // Orders assigned to the driver
     orders: [{ type: ObjectId, ref: "Order" }],
   },
   { timestamps: true }

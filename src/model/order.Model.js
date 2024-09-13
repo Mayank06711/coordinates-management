@@ -13,9 +13,10 @@ const OrderSchema = new mongoose.Schema(
         product: { type: ObjectId, ref: "Product" },
         qty: { type: Number },
         sellerId: { type: ObjectId, ref: "Seller" },
-        price: { type: Number, default: 0 }
-      },
-    ],
+        price: { type: Number, default: 0 },
+        status: { type: String, default: "pending" },
+      }],
+    colletedBy: { type: ObjectId, ref: "Driver" },  
     currentStatus: {
       type: String,
       enum: [
@@ -45,13 +46,13 @@ const OrderSchema = new mongoose.Schema(
       B: { type: String },
       C: { type: String },
       D: { type: String },
-    },//confusion on whic cities it will take
+    },
     discountAmount: { type: Number, min: 0 },
     finalPrice: { type: Number, min: 0 },
     paymentId: { type: String },
     topicId: { type: String },
     timing: { type: String },
-    hub: { type: ObjectId, ref: "Hub" }, // Reference to the hub processing the order
+    hub: { type: ObjectId, ref: "Hub" }, 
     finishedDeliveries: [{ type: ObjectId, ref: "Delivery" }],
     orderNo: { type: Number, default: 0 },
   },
