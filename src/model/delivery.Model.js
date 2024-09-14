@@ -36,6 +36,10 @@ const DeliveriesSchema = new mongoose.Schema(
       accuracy: { type: Number },
       bearing: { type: Number },
     }, // Geo-location details of the delivery
+    deliveryPhoto: {
+      publicId: {type:String},
+      url: {type:String},
+    }
   },
   { timestamps: true }
 );
