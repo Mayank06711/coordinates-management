@@ -1,7 +1,6 @@
 import dotenv from "dotenv"
 import app from "./app.js";
 import conncetDb from "./db/index.js"
-import {createFakeCustomer} from "./helper/faker.js"
 import { disconnectAdmin } from "./services/kafka.js";
 import { connectRedis } from "./services/redis.js";
 dotenv.config({

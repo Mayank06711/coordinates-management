@@ -30,9 +30,7 @@ app.use(limitIncomingRequests)
 
 // import routes
 import awsRoutes from "./routes/aws.routes.js"
-import customerRoutes from "./routes/customer.routes.js"
 import { errorHandler } from "./middlewares/middleware.js";
-app.use("/api/v1/customer/", customerRoutes)
 app.use("/api/v1/aws/", awsRoutes)
 app.use(errorHandler)
 
