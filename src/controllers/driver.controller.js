@@ -54,21 +54,6 @@ const approveDriver = asyncHandler(async (req, res) => {
 });
 
 // Function to get all drivers in a hub
-
-<<<<<<< HEAD
-export { createDriver, approveDriver };
-=======
-    res.status(200).json({
-      message: "Driver approved successfully and is now active.",
-      driver: updatedDriver,
-    });
-  } catch (error) {
-throw new Error(error.message) 
-     }
-};
-
-
-
 export const getDriverOrders = async (req, res) => {
   try {
     const { driverId } = req.params; // Get the driverId from the URL
@@ -107,4 +92,4 @@ export const getDriverOrders = async (req, res) => {
 
 
 export { createDriver , approveDriver};
->>>>>>> a425018b5204f72666fffc3efe1e9449b465e7e3
+

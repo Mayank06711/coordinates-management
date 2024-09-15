@@ -129,4 +129,5 @@ const delUser = new mongoose.Schema({
 // creating a compound index
 delUser.index({ phone: 1 , userName:1, email:1});  // 1 for ascending order making compaund index for fast queries
 // left field will use indexing if used only but if userName or email is only used for searching it might not use compound indexing in moongoose, so query should follow order, in which fields are passsed in same order as in case of making them index
-module.exports = mongoose.model("DelUser", delUser);
+const  DelUser = mongoose.model("DelUser", delUser);
+export default DelUser;

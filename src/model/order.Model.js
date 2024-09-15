@@ -3,20 +3,21 @@ const { ObjectId } = mongoose.Schema;
 
 const OrderSchema = new mongoose.Schema(
   {
-    customerId: { type: ObjectId, ref: "Customer" },
+    buyerId: { type: ObjectId, ref: "User" },
+    productId: [{ type: ObjectId, ref: "Product" }],
+    sellerId: [{ type: ObjectId, ref: "User" }],
     delivered: { type: Boolean, default: false },
     quantity: { type: Number, min: 1 },
     total: { type: Number, min: 0 },
-    customerName: { type: String , required: true },
-    orderDetails: [
+    customername: { type: String },
+    orderdetails: [
       {
         product: { type: ObjectId, ref: "Product" },
         qty: { type: Number },
-        sellerId: { type: ObjectId, ref: "Seller" },
+        seller: { type: ObjectId, ref: "User" },
         price: { type: Number, default: 0 },
-        status: { type: String, default: "pending" },
-      }],
-    colletedBy: { type: ObjectId, ref: "Driver" },  
+      },
+    ],
     currentStatus: {
       type: String,
       enum: [
@@ -33,7 +34,9 @@ const OrderSchema = new mongoose.Schema(
       ],
       default: "pending",
     },
-    deliveryCharges: { type: Number, min: 0 },
+    orderId: { type: String, unique: true },
+    onlineorderid: { type: String },
+    deliverycharges: { type: Number, min: 0 },
     taxes: { type: Number, min: 0 },
     paymentMode: {
       type: String,
@@ -47,20 +50,20 @@ const OrderSchema = new mongoose.Schema(
       C: { type: String },
       D: { type: String },
     },
-    discountAmount: { type: Number, min: 0 },
-    finalPrice: { type: Number, min: 0 },
+    discountamount: { type: Number, min: 0 },
+    finalprice: { type: Number, min: 0 },
     paymentId: { type: String },
     topicId: { type: String },
     timing: { type: String },
-    hub: { type: ObjectId, ref: "Hub" }, 
-    finishedDeliveries: [{ type: ObjectId, ref: "Delivery" }],
-    orderNo: { type: Number, default: 0 },
+    hub: { type: ObjectId, ref:"Hub" },
+    finisheddeliveries: [{ type: ObjectId, ref: "DeliveriesSchema" }],
+    orderno: { type: Number, default: 0 },
   },
   { timestamps: true }
 );
 
-OrderSchema.index({customerName:1, orderDetails: 1, hub:1})
+OrderSchema.index({ customername: 1, orderdetails: 1, hub: 1 });
 
-const Order = mongoose.model('Order', OrderSchema);
+const Order = mongoose.model("Order", OrderSchema);
 
 export default Order;
