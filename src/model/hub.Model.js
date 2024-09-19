@@ -18,7 +18,7 @@ const HubSchema = new mongoose.Schema(
       state: { type: String, required: true },
       country: { type: String, required: true },
       coordinates: {
-        type: [Number], // [longitude, latitude]
+        type: [Number], // [latitude,longitude]
         index: "2dsphere", // Enable 2dsphere index for geospatial queries
       },
     

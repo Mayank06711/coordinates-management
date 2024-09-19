@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema;
 
 const delUser = new mongoose.Schema({
-  phone: { type: Number, unique: true, required: true, },
+  phone: { type: Number, unique: true, required: true },
   userName: { type: String },
   fullName: { type: String },
   adharNumber: { type: Number },
@@ -25,7 +25,7 @@ const delUser = new mongoose.Schema({
       provider: { type: String },
       accuracy: { type: Number },
       speed: { type: Number },
-      bearing: { type: Number },
+      bearing: { type: String, required: true }, // like east west north south
     },
   },
   referralId: { type: String },
@@ -36,6 +36,7 @@ const delUser = new mongoose.Schema({
       content: { type: String },
       type: { type: String },
       size: { type: String },
+      awsKey: { type: String },
     },
   ],
   activeStatus: { type: String, default: "online" },
@@ -61,6 +62,7 @@ const delUser = new mongoose.Schema({
     otp: { type: Number },
     timing: { type: Number, default: Date.now().toString() },
   },
+  bagCap: { type: Number, default: 30 },
   deliveries: [{ type: ObjectId, ref: "DeliveriesSchema" }],
   finishedDeliveries: [{ type: ObjectId, ref: "DeliveriesSchema" }], //completed deliveries
   achievements: [
@@ -88,10 +90,6 @@ const delUser = new mongoose.Schema({
   ],
   totalEarnings: { type: Number, default: 0 },
   deliveryCount: { type: Number, default: 0 },
-  currentLocation: {
-    latitude: { type: Number },
-    longitude: { type: Number },
-  },
   primaryLoc: { type: String },
   bank: {
     accNo: { type: String },
@@ -123,11 +121,15 @@ const delUser = new mongoose.Schema({
       ref: "Achievements",
     },
   ],
+  hub: { type: ObjectId, ref: "Hub" },
   currentDoing: { type: ObjectId, ref: "DeliveriesSchema" }, //is user currently doing any delivery
 });
 
+
 // creating a compound index
-delUser.index({ phone: 1 , userName:1, email:1});  // 1 for ascending order making compaund index for fast queries
+delUser.index({ phone: 1, userName: 1, email: 1 }); // 1 for ascending order making compaund index for fast queries
 // left field will use indexing if used only but if userName or email is only used for searching it might not use compound indexing in moongoose, so query should follow order, in which fields are passsed in same order as in case of making them index
-const  DelUser = mongoose.model("DelUser", delUser);
+
+const DelUser = mongoose.model("DelUser", delUser);
+
 export default DelUser;

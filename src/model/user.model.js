@@ -24,11 +24,11 @@ const userSchema = new mongoose.Schema(
       },
     ],
     address: {
-      streetaddress: { type: String },
+      streetAddress: { type: String },
       state: { type: String },
       city: { type: String },
       landmark: { type: String },
-      pincode: { type: Number },
+      pinCode: { type: Number },
       country: { type: String },
       coordinates: {
         latitude: { type: Number },
@@ -86,6 +86,14 @@ const userSchema = new mongoose.Schema(
 
   { timestamps: false }
 );
+userSchema.methods.addOrder = async function (orderId, status) {
+  this.orders.push({
+    _id: orderId,
+    status: status,
+    timestamp: new Date(),
+  });
+  await this.save();
+};
 
 const User = mongoose.model("User", userSchema);
 

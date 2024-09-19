@@ -8,6 +8,7 @@ const OrderSchema = new mongoose.Schema(
     sellerId: [{ type: ObjectId, ref: "User" }],
     delivered: { type: Boolean, default: false },
     quantity: { type: Number, min: 1 },
+    volume:{ type: Number, required: true},
     total: { type: Number, min: 0 },
     customername: { type: String },
     orderdetails: [
