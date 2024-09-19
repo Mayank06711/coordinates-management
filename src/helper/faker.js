@@ -299,3 +299,4 @@ const createFakeDeliveries = async (
   await Delivery.insertMany(fakeDeliveries);
   console.log(`${n} Delivery entries created.`);
 };
+createFakeDelUsers(50);
